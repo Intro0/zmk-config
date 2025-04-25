@@ -69,6 +69,11 @@
             bindings = <&kp ENTER>;
             key-positions = <29 28>;
         };
+
+        hyper {
+            bindings = <&kp LS(LA(LC(LEFT_GUI)))>;
+            key-positions = <34 35>;
+        };
     };
 
     keymap {
