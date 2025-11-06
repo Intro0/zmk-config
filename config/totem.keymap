@@ -33,6 +33,15 @@
     quick-tap-ms = <150>;
 };
 
+// Callum-style oneshot mods using sticky keys
+// Configured per ZMK docs for callum-style mods
+&sk {
+    release-after-ms = <2000>; // 2 seconds - generous timeout
+    quick-release;             // Release immediately after next key press
+    lazy;                      // Wait to activate until next key (prevents accidental GUI menu)
+    ignore-modifiers;          // Allow stacking multiple oneshot mods
+};
+
 / {
     behaviors {
         hm: homerow_mods {
@@ -45,15 +54,6 @@
             global-quick-tap;
             bindings = <&kp>, <&kp>;
         };
-    };
-
-    // Callum-style oneshot mods using sticky keys
-    // Configured per ZMK docs for callum-style mods
-    &sk {
-        release-after-ms = <2000>; // 2 seconds - generous timeout
-        quick-release;             // Release immediately after next key press
-        lazy;                      // Wait to activate until next key (prevents accidental GUI menu)
-        ignore-modifiers;          // Allow stacking multiple oneshot mods
     };
 
     combos {
