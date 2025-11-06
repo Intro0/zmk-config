@@ -3,7 +3,7 @@
 //                                                        ▄▀▀▀▄  ▄  ▄▀▀▀▄  ▄  ▄▀▀▀▄  █  ▄▀▀▀▄
 //                                                        █   █  █  █   █  █  █   █  █  █   █
 //                                                         ▀▀▀   █   ▀▀▀   █   ▀▀▀   ▀   ▀▀▀
-//                                                               █      ▄▄▄█▄▄▄    █   █  
+//                                                               █      ▄▄▄█▄▄▄    █   █
 //                                                               ▀      █  █  █     █▄█
 //                                                             ▀▀▀▀▀    █  █  █      ▀
 //                                                                      ▀  ▀  ▀
@@ -45,6 +45,15 @@
             global-quick-tap;
             bindings = <&kp>, <&kp>;
         };
+    };
+
+    // Callum-style oneshot mods using sticky keys
+    // Configured per ZMK docs for callum-style mods
+    &sk {
+        release-after-ms = <2000>; // 2 seconds - generous timeout
+        quick-release;             // Release immediately after next key press
+        lazy;                      // Wait to activate until next key (prevents accidental GUI menu)
+        ignore-modifiers;          // Allow stacking multiple oneshot mods
     };
 
     combos {
@@ -102,7 +111,7 @@
             bindings = <
        &kp LS(EXCL)  &kp LS(AT)    &kp LS(POUND)  &kp LS(DLLR)  &kp LS(PRCNT)    &kp LS(CARET)  &kp LS(AMPS)   &kp LS(STAR)  &kp GRAVE     &kp LS(TILDE)
        &kp LS(LT)    &kp LS(LPAR)  &kp LBKT       &kp LS(LBRC)  &kp FSLH         &kp BSLH       &kp LS(RBRC)   &kp RBKT      &kp LS(RPAR)  &kp LS(GT)
-&none  &none         &none         &none          &none         &none            &none          &kp LS(UNDER)  &kp MINUS     &kp LS(PLUS)  &kp EQUAL      &kp LS(PIPE)
+&none  &sk LGUI      &sk LALT      &sk LCTRL      &sk LSHFT     &none            &none          &kp LS(UNDER)  &kp MINUS     &kp LS(PLUS)  &kp EQUAL      &kp LS(PIPE)
                                    &trans         &trans        &trans           &trans         &trans         &trans
             >;
         };
