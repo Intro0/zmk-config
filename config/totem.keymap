@@ -16,9 +16,7 @@
 #define Base        0
 #define Num         1
 #define Sym         2
-#define Fun         3
-#define Game        4
-#define Gameplus    5
+#define Tab         3
 
 &mt {
     quick-tap-ms = <100>;
@@ -31,16 +29,6 @@
     tapping-term-ms = <240>;
     flavor = "balanced";
     quick-tap-ms = <150>;
-};
-
-// Callum-style oneshot mods using sticky keys
-// Configured per ZMK docs for callum-style mods
-
-&sk {
-    release-after-ms = <2000>; // 2 seconds - generous timeout
-    quick-release;             // Release immediately after next key press
-    lazy;                      // Wait to activate until next key (prevents accidental GUI menu)
-    ignore-modifiers;          // Allow stacking multiple oneshot mods
 };
 
 / {
@@ -79,11 +67,6 @@
             bindings = <&kp ENTER>;
             key-positions = <29 28>;
         };
-
-        hyper {
-            bindings = <&mo 3>;
-            key-positions = <34 35>;
-        };
     };
 
     keymap {
@@ -92,10 +75,10 @@
         Base {
             display-name = "Base";
             bindings = <
-                       &kp Q  &kp W  &kp E             &kp R      &kp T    &kp Y  &kp U      &kp I      &kp O    &kp P
-                       &kp A  &kp S  &kp D             &kp F      &kp G    &kp H  &kp J      &kp K      &kp L    &kp SEMI
-&kp LS(LA(LG(LCTRL)))  &kp Z  &kp X  &kp C             &kp V      &kp B    &kp N  &kp M      &kp COMMA  &kp DOT  &kp SLASH  &kp APOSTROPHE
-                                     &kp LEFT_COMMAND  &kp SPACE  &mo 1    &mo 2  &kp LSHFT  &kp RALT
+            &kp Q         &kp W         &kp E         &kp R          &kp T    &kp Y  &kp U          &kp I          &kp O         &kp P
+            &kp A         &kp S         &kp D         &kp F          &kp G    &kp H  &kp J          &kp K          &kp L         &kp SEMI
+&mo Tab     &hm LCTRL Z   &hm LALT X    &hm LGUI C    &hm LSHFT V    &kp B    &kp N  &hm RSHFT M    &hm RGUI COMMA &hm RALT DOT  &hm RCTRL SLASH  &kp APOSTROPHE
+                                        &kp LEFT_COMMAND  &kp SPACE  &mo 1    &mo 2  &kp LSHFT  &kp LS(LA(LG(LCTRL)))
             >;
         };
 
@@ -117,12 +100,13 @@
             >;
         };
 
-        Mod {
+        Tab {
+            display-name = "Tab";
             bindings = <
-       &kp N1    &kp N2    &kp N3     &kp N4     &kp N5    &kp N6  &kp N7     &kp N8     &kp N9    &kp N0
-       &sk LGUI  &sk LALT  &sk LCTRL  &sk LSHFT  &none     &none   &sk RSHFT  &sk RCTRL  &sk RALT  &sk RGUI
-&none  &none     &none     &none      &none      &none     &none   &none      &none      &none     &none     &none
-                           &none      &none      &none     &none   &none      &none
+       &kp LG(N1)  &kp LG(N2)  &kp LG(N3)  &kp LG(N4)  &kp LG(N5)    &kp LG(N6)  &kp LG(N7)  &kp LG(N8)  &kp LG(N9)  &kp LG(N0)
+       &none       &none       &none       &none       &none         &none       &none       &none       &none       &none
+&trans &none       &none       &none       &none       &none         &none       &none       &none       &none       &none       &none
+                               &none       &none       &none         &none       &none       &none
             >;
         };
     };
