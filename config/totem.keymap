@@ -75,10 +75,10 @@
         Base {
             display-name = "Base";
             bindings = <
-            &kp Q         &kp W         &kp E         &kp R          &kp T    &kp Y  &kp U          &kp I          &kp O         &kp P
-            &kp A         &kp S         &kp D         &kp F          &kp G    &kp H  &kp J          &kp K          &kp L         &kp SEMI
-&mo Tab     &hm LCTRL Z   &hm LALT X    &hm LGUI C    &hm LSHFT V    &kp B    &kp N  &hm RSHFT M    &hm RGUI COMMA &hm RALT DOT  &hm RCTRL SLASH  &kp APOSTROPHE
-                                        &kp LEFT_COMMAND  &kp SPACE  &mo 1    &mo 2  &kp LSHFT  &kp LS(LA(LG(LCTRL)))
+                        &kp Q         &kp W         &kp E         &kp R          &kp T    &kp Y  &kp U          &kp I          &kp O         &kp P
+                        &kp A         &kp S         &kp D         &kp F          &kp G    &kp H  &kp J          &kp K          &kp L         &kp SEMI
+&kp LS(LA(LG(LCTRL)))   &hm LCTRL Z   &hm LALT X    &hm LGUI C    &hm LSHFT V    &kp B    &kp N  &hm RSHFT M    &hm RGUI COMMA &hm RALT DOT  &hm RCTRL SLASH  &kp APOSTROPHE
+                                                    &kp LEFT_COMMAND  &kp SPACE  &mo 1    &mo 2  &kp LSHFT  &mo Tab
             >;
         };
 
@@ -103,8 +103,8 @@
         Tab {
             display-name = "Tab";
             bindings = <
+       &kp LC(N1)  &kp LC(N2)  &kp LC(N3)  &kp LC(N4)  &kp LC(N5)    &kp LC(N6)  &kp LC(N7)  &kp LC(N8)  &kp LC(N9)  &kp LC(N0)
        &kp LG(N1)  &kp LG(N2)  &kp LG(N3)  &kp LG(N4)  &kp LG(N5)    &kp LG(N6)  &kp LG(N7)  &kp LG(N8)  &kp LG(N9)  &kp LG(N0)
-       &none       &none       &none       &none       &none         &none       &none       &none       &none       &none
 &trans &none       &none       &none       &none       &none         &none       &none       &none       &none       &none       &none
                                &none       &none       &none         &none       &none       &none
             >;
