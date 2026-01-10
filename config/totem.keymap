@@ -16,7 +16,6 @@
 #define Base        0
 #define Num         1
 #define Sym         2
-#define Tab         3
 
 &mt {
     quick-tap-ms = <100>;
@@ -45,29 +44,7 @@
         };
     };
 
-    combos {
-        compatible = "zmk,combos";
 
-        escape {
-            bindings = <&kp ESCAPE>;
-            key-positions = <1 2>;
-        };
-
-        tab {
-            bindings = <&kp TAB>;
-            key-positions = <22 23>;
-        };
-
-        backspace {
-            bindings = <&kp BACKSPACE>;
-            key-positions = <7 8>;
-        };
-
-        enter {
-            bindings = <&kp ENTER>;
-            key-positions = <29 28>;
-        };
-    };
 
     keymap {
         compatible = "zmk,keymap";
@@ -77,8 +54,8 @@
             bindings = <
                         &kp Q         &kp W         &kp E         &kp R          &kp T    &kp Y  &kp U          &kp I          &kp O         &kp P
                         &kp A         &kp S         &kp D         &kp F          &kp G    &kp H  &kp J          &kp K          &kp L         &kp SEMI
-&kp LS(LA(LG(LCTRL)))   &hm LCTRL Z   &hm LALT X    &hm LGUI C    &hm LSHFT V    &kp B    &kp N  &hm RSHFT M    &hm RGUI COMMA &hm RALT DOT  &hm RCTRL SLASH  &kp APOSTROPHE
-                                                    &kp LEFT_COMMAND  &kp SPACE  &mo 1    &mo 2  &kp LSHFT  &mo Tab
+&kp ESCAPE              &hm LCTRL Z   &hm LALT X    &hm LGUI C    &hm LSHFT V    &kp B    &kp N  &hm RSHFT M    &hm RGUI COMMA &hm RALT DOT  &hm RCTRL SLASH  &kp APOSTROPHE
+                                                    &kp LS(LA(LG(LCTRL)))  &kp SPACE  &lt 1 TAB    &lt 2 ENTER  &kp LSHFT  &kp BACKSPACE
             >;
         };
 
@@ -100,14 +77,5 @@
             >;
         };
 
-        Tab {
-            display-name = "Tab";
-            bindings = <
-       &kp LC(N1)  &kp LC(N2)  &kp LC(N3)  &kp LC(N4)  &kp LC(N5)    &kp LC(N6)  &kp LC(N7)  &kp LC(N8)  &kp LC(N9)  &kp LC(N0)
-       &kp LG(N1)  &kp LG(N2)  &kp LG(N3)  &kp LG(N4)  &kp LG(N5)    &kp LG(N6)  &kp LG(N7)  &kp LG(N8)  &kp LG(N9)  &kp LG(N0)
-&trans &none       &none       &none       &none       &none         &none       &none       &none       &none       &none       &none
-                               &none       &none       &none         &none       &none       &none
-            >;
-        };
     };
 };
