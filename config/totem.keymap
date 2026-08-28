@@ -60,8 +60,8 @@
             display-name = "Base";
             bindings = <
                 &kp Q                   &kp W       &kp E       &kp R        &kp T          &kp Y        &kp U        &kp I           &kp O         &kp P
-                &hm LS(LA(LC(LGUI))) A  &kp S       &kp D       &kp F        &kp G          &kp H        &kp J        &kp K           &kp L         &hm RS(RA(RC(RGUI))) SQT
-                &none  &kp Z             &hm LGUI X  &hm LALT C  &hm LCTRL V  &kp B          &kp N        &hm RCTRL M  &hm RALT COMMA  &hm RGUI DOT  &kp FSLH  &none
+                &hm LS(LA(LC(LGUI))) A  &kp S       &kp D       &kp F        &kp G          &kp H        &kp J        &kp K           &kp L         &kp SEMI
+                &kp LS(LA(LC(LGUI)))    &kp Z       &hm LGUI X  &hm LALT C  &hm LCTRL V  &kp B          &kp N        &hm RCTRL M  &hm RALT COMMA  &hm RGUI DOT  &kp FSLH  &kp SQT
                                               &kp LGUI    &kp SPACE    &lt NUM TAB    &lt SYM RET  &kp RSHFT    &kp BSPC
             >;
         };
